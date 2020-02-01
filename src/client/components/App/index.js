@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Switch, Route, Router } from 'react-router-dom';
 
 import ProbabilityCalculator from '../../containers/ProbabilityCalculator';
-import ProbabilityVisualiser from '../../containers/ProbabilityVisualiser';
+import ProbabilityVisualiser from '../ProbabilityVisualiser';
 
 import { STORE_PROP_TYPE, HISTORY_PROP_TYPE } from '../../helpers/propTypeHelper';
 import { URL__PROBABILITY_CALCULATOR, URL__PROBABILITY_CALCULATOR__RESULT } from '../../constants';

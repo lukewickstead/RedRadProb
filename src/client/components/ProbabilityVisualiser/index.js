@@ -1,55 +1,49 @@
-/* eslint-disable react/prefer-stateless-function */
-// TODO: Remove or create as function
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Chart } from 'react-google-charts';
 
-import SubmitButton from '../../components/Widgets/SubmitButton';
+import SubmitButton from '../Widgets/SubmitButton';
 import { NUMBER_OR_STRING_PROP_TYPE, PROBABILITY_TYPES_PROP_TYPE } from '../../helpers/propTypeHelper';
 import { PROBABILITY_TYPE__EITHER, PROBABILITY_PIE_CHART_CONFIG } from '../../constants';
 import { probabilityCalculatorResultBackAction, PUT__PROBABILITY_CALCULATOR__RESULT__BACK } from '../../actions/probabilityActions';
 
-class ProbabilityVisualiser extends React.Component {
-  render() {
-    const {
-      probabilityCalculatorResultBackActionHandler,
-      probabilityOne,
-      probabilityTwo,
-      probabilityResult,
-      probabilityType,
-    } = this.props;
+function ProbabilityVisualiser({
+  probabilityCalculatorResultBackActionHandler,
+  probabilityOne,
+  probabilityTwo,
+  probabilityResult,
+  probabilityType,
+}) {
+  const userMsg = `The probability of ${probabilityType === PROBABILITY_TYPE__EITHER ? probabilityType.toLowerCase() : ''} ${probabilityOne} or ${probabilityTwo} is ${probabilityResult}.`;
 
-    const userMsg = `The probability of ${probabilityType === PROBABILITY_TYPE__EITHER ? probabilityType.toLowerCase() : ''} ${probabilityOne} or ${probabilityTwo}  is ${probabilityResult}.`;
+  return (
+    <div className="central-column-layout-container">
+      <h1>RedRadProb</h1>
+      <div className="central-column-layout-container-inner">
+        <form>
+          <p>
+            {userMsg}
+          </p>
 
-    return (
-      <div className="central-column-layout-container">
-        <h1>RedRadProb</h1>
-        <div className="central-column-layout-container-inner">
-          <form>
-            <p>
-              {userMsg}
-            </p>
+          <Chart
+            chartType="PieChart"
+            data={[['Yes', 'No'], ['Yes', probabilityResult], ['No', 1 - probabilityResult]]}
+            graph_id="PieChart"
+            height="400px"
+            options={PROBABILITY_PIE_CHART_CONFIG}
+            width="100%"
+          />
 
-            <Chart
-              chartType="PieChart"
-              data={[['Yes', 'No'], ['Yes', probabilityResult], ['No', 1 - probabilityResult]]}
-              graph_id="PieChart"
-              height="400px"
-              options={PROBABILITY_PIE_CHART_CONFIG}
-              width="100%"
-            />
-
-            <SubmitButton
-              forwardId={PUT__PROBABILITY_CALCULATOR__RESULT__BACK}
-              handleSubmit={probabilityCalculatorResultBackActionHandler}
-              text="Back"
-            />
-          </form>
-        </div>
+          <SubmitButton
+            forwardId={PUT__PROBABILITY_CALCULATOR__RESULT__BACK}
+            handleSubmit={probabilityCalculatorResultBackActionHandler}
+            text="Back"
+          />
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 ProbabilityVisualiser.propTypes = {

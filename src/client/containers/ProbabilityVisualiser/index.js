@@ -3,15 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Chart } from 'react-google-charts';
 
-import { NUMBER_OR_STRING_PROP_TYPE, PROBABILITY_TYPES_PROP_TYPE } from '../../helpers/propTypeHelper';
 import SubmitButton from '../../components/Widgets/SubmitButton';
-
-import {
-  PUT__PROBABILITY_CALCULATOR__RESULT__BACK,
-  probabilityCalculatorResultBackAction,
-} from '../../actions/probabilityActions';
-import { PROBABILITY_TYPE__EITHER } from '../../constants';
+import { NUMBER_OR_STRING_PROP_TYPE, PROBABILITY_TYPES_PROP_TYPE } from '../../helpers/propTypeHelper';
+import { PROBABILITY_TYPE__EITHER, PROBABILITY_PIE_CHART_CONFIG } from '../../constants';
+import { probabilityCalculatorResultBackAction, PUT__PROBABILITY_CALCULATOR__RESULT__BACK } from '../../actions/probabilityActions';
 
 class ProbabilityVisualiser extends React.Component {
   render() {
@@ -23,7 +20,6 @@ class ProbabilityVisualiser extends React.Component {
       probabilityType,
     } = this.props;
 
-    // TODO: as helper method and use enum value...
     const userMsg = `The probability of ${probabilityType === PROBABILITY_TYPE__EITHER ? probabilityType.toLowerCase() : ''} ${probabilityOne} or ${probabilityTwo}  is ${probabilityResult}.`;
 
     return (
@@ -35,9 +31,18 @@ class ProbabilityVisualiser extends React.Component {
               {userMsg}
             </p>
 
+            <Chart
+              chartType="PieChart"
+              data={[['Yes', 'No'], ['Yes', probabilityResult], ['No', 1 - probabilityResult]]}
+              graph_id="PieChart"
+              height="400px"
+              options={PROBABILITY_PIE_CHART_CONFIG}
+              width="100%"
+            />
+
             <SubmitButton
-              handleSubmit={probabilityCalculatorResultBackActionHandler}
               forwardId={PUT__PROBABILITY_CALCULATOR__RESULT__BACK}
+              handleSubmit={probabilityCalculatorResultBackActionHandler}
               text="Back"
             />
           </form>
@@ -60,6 +65,8 @@ const mapStateToProps = (state) => ({
   probabilityOne: state.probability.probabilityOne,
   probabilityTwo: state.probability.probabilityTwo,
   probabilityResult: state.probability.probabilityResult,
+  chartWidth: window.innerWidth,
+  chartHeight: window.innerHeight * 0.45,
 });
 
 const mapDispatchToProps = (dispatch) => ({

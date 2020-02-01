@@ -15,3 +15,25 @@ export const PROBABILITY_TYPE__EITHER = 'EITHER';
 export const PROBABILITY_TYPE__OR = 'OR';
 export const PROBABILITY_TYPE__EITHER__TITLE = 'Either';
 export const PROBABILITY_TYPE__OR__TITLE = 'Or';
+
+export const PROBABILITY_PIE_CHART_CONFIG = {
+  slices: [{ color: 'green' }, { color: 'red' }],
+  legend: {
+    position: 'bottom',
+    alignment: 'center',
+    textStyle: {
+      color: 'black',
+      fontSize: 32,
+    },
+  },
+  tooltip: {
+    showColorCode: true,
+  },
+  is3D: true,
+  chartArea: {
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '80%',
+  },
+};

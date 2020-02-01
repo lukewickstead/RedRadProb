@@ -14,7 +14,7 @@ import { URL__PROBABILITY_CALCULATOR__RESULT, URL__PROBABILITY_CALCULATOR } from
 import probabilitySaga, { probabilityCalculatorNextSaga, probabilityCalculatorBackSaga } from './probabilitySaga';
 
 describe('When the user is on the probability calculator page', () => {
-  describe('and they have input valid probabiities', () => {
+  describe('and they have input valid probabilities', () => {
     describe('and they select next', () => {
       it('should call the calculator endpoint and put the result into state', () => {
         const action = probabilityCalculatorNextAction('Either', 0, 1);

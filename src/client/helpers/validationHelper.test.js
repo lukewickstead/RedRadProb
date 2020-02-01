@@ -8,7 +8,7 @@ describe('when calling getValidationContainerClassNames', () => {
     });
   });
 
-  describe('with invalid and invisited', () => {
+  describe('with invalid and not visited', () => {
     it('should return the correct string', () => {
       expect(getValidationContainerClassNames(true, true)).to.equal('validation-container validation-container-visited validation-container-invalid');
     });

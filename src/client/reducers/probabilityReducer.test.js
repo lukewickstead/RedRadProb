@@ -16,7 +16,7 @@ describe('when calling probabilityReducer ', () => {
   });
 
   describe('to reduce PUT__PROBABILITY_CALCULATOR__RESULT', () => {
-    it('should return the correcrt state', () => {
+    it('should return the correct state', () => {
       expect(probabilityReducer({ }, putProbabilityCalculatorResult(
         'Test probabilityType',
         'Test probabilityOne',

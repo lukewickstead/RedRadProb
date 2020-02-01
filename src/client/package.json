@@ -11,7 +11,8 @@
     "build-client": "NODE_ENV=production webpack --mode production --config webpack.config.js",
     "dev:build-client": "NODE_ENV=development webpack --config webpack.config.js --mode development",
     "dev:run-server": "nodemon --exitcrash --exec babel-node ./index.server.js",
-    "dev": "npm run dev:build-client && npm run dev:run-server "
+    "dev": "npm run dev:build-client && npm run dev:run-server ",
+    "start": "npm run dev"
   },
   "engines": {
     "node": "12.x"

@@ -8,5 +8,10 @@ export const PROBABILITY__INPUT_TWO__MAX_LENGTH = PROBABILITY__INPUT_ONE__MAX_LE
 export const PROBABILITY__INPUT_TWO__FIELD_NAME = 'inputTwo';
 export const PROBABILITY__INPUT_TWO__LABEL = 'Second probability';
 
-export const URL__PROBABILITY_CALCULATOR = '';
-export const URL__PROBABILITY_CALCULATOR__RESULT = 'Result';
+export const URL__PROBABILITY_CALCULATOR = '/';
+export const URL__PROBABILITY_CALCULATOR__RESULT = '/Result';
+
+export const PROBABILITY_TYPE__EITHER = 'EITHER';
+export const PROBABILITY_TYPE__OR = 'OR';
+export const PROBABILITY_TYPE__EITHER__TITLE = 'Either';
+export const PROBABILITY_TYPE__OR__TITLE = 'Or';

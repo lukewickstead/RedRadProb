@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
 
-import { PUT__PROBABILITY_CALCULATOR__NEXT, putProbabilityCalculatorResult } from '../actions/probabilityActions';
-import { URL__PROBABILITY_CALCULATOR__RESULT } from '../constants';
+import { URL__PROBABILITY_CALCULATOR__RESULT, URL__PROBABILITY_CALCULATOR } from '../constants';
+import { PUT__PROBABILITY_CALCULATOR__NEXT, PUT__PROBABILITY_CALCULATOR__RESULT__BACK, putProbabilityCalculatorResult } from '../actions/probabilityActions';
 
 export function* probabilityCalculatorNextSaga({ data }) {
   const { probabilityType, probabilityOne, probabilityTwo } = data;
@@ -10,6 +10,11 @@ export function* probabilityCalculatorNextSaga({ data }) {
   yield put(push(URL__PROBABILITY_CALCULATOR__RESULT));
 }
 
+export function* probabilityCalculatorBackSaga() {
+  yield put(push(URL__PROBABILITY_CALCULATOR));
+}
+
 export default function* probabilitySaga() {
   yield takeEvery(PUT__PROBABILITY_CALCULATOR__NEXT, probabilityCalculatorNextSaga);
+  yield takeEvery(PUT__PROBABILITY_CALCULATOR__RESULT__BACK, probabilityCalculatorBackSaga);
 }

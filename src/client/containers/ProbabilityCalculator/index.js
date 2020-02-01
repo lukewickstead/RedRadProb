@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { NUMBER_OR_STRING_PROP_TYPE } from '../../helpers/propTypeHelper';
+import { NUMBER_OR_STRING_PROP_TYPE, PROBABILITY_TYPES_PROP_TYPE__OPTIONAL } from '../../helpers/propTypeHelper';
 import SubmitButton from '../../components/Widgets/SubmitButton';
 import QuestionNumber from '../../components/Widgets/QuestionNumber';
 import ProbabilityTypeOptions from '../../components/ProbabilityTypeOptions';
@@ -86,8 +86,8 @@ class ProbabilityCalculator extends React.Component {
     }
 
     const { probabilityCalculatorNextActionHandler } = this.props;
-    const { inputOne, inputTwo, probabilityType } = this.state;
-    probabilityCalculatorNextActionHandler(inputOne, inputTwo, probabilityType);
+    const { probabilityType, inputOne, inputTwo } = this.state;
+    probabilityCalculatorNextActionHandler(probabilityType, inputOne, inputTwo);
     event.preventDefault();
   }
 
@@ -159,7 +159,7 @@ ProbabilityCalculator.propTypes = {
   probabilityCalculatorNextActionHandler: PropTypes.func.isRequired,
   inputOneGlobal: NUMBER_OR_STRING_PROP_TYPE.isRequired,
   inputTwoGlobal: NUMBER_OR_STRING_PROP_TYPE.isRequired,
-  probabilityTypeGlobal: NUMBER_OR_STRING_PROP_TYPE.isRequired,
+  probabilityTypeGlobal: PROBABILITY_TYPES_PROP_TYPE__OPTIONAL.isRequired,
 };
 
 const mapStateToProps = (state) => ({

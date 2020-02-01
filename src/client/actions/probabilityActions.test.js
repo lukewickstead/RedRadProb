@@ -3,7 +3,9 @@ import { expect } from 'chai';
 import {
   PUT__PROBABILITY_CALCULATOR__NEXT,
   PUT__PROBABILITY_CALCULATOR__RESULT,
+  PUT__PROBABILITY_CALCULATOR__RESULT__BACK,
   probabilityCalculatorNextAction,
+  probabilityCalculatorResultBackAction,
   putProbabilityCalculatorResult,
 } from './probabilityActions';
 
@@ -17,6 +19,15 @@ describe('when calling probabilityCalculatorNextAction', () => {
           probabilityOne: 0,
           probabilityTwo: 1,
         },
+      });
+  });
+});
+
+describe('when calling probabilityCalculatorResultBackAction', () => {
+  it('should return the correct action type and', () => {
+    expect(probabilityCalculatorResultBackAction())
+      .to.deep.equal({
+        type: PUT__PROBABILITY_CALCULATOR__RESULT__BACK,
       });
   });
 });

@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import QuestionOption from '../Widgets/QuestionOption';
 
+import {
+  PROBABILITY_TYPE__EITHER,
+  PROBABILITY_TYPE__EITHER__TITLE,
+  PROBABILITY_TYPE__OR,
+  PROBABILITY_TYPE__OR__TITLE,
+} from '../../constants';
+
 function ProbabilityTypeOptions(
   {
     handleInputChange,
@@ -15,14 +22,12 @@ function ProbabilityTypeOptions(
     name: 'probabilityType',
     questions: [
       {
-        title: 'Either',
-        subTitle: '',
-        value: 'Either',
+        title: PROBABILITY_TYPE__EITHER__TITLE,
+        value: PROBABILITY_TYPE__EITHER,
       },
       {
-        title: 'Or',
-        subTitle: '',
-        value: 'Or',
+        title: PROBABILITY_TYPE__OR__TITLE,
+        value: PROBABILITY_TYPE__OR,
       },
     ],
   };

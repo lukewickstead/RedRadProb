@@ -46,27 +46,6 @@
                     padding: 15px 15px 15px 57px;
                 }
             }
-
-            .question-title-with-subtitle
-            {
-                width: 100%;
-                position: relative;
-                line-height: 1.44;
-
-                label {
-                    cursor: pointer;
-                    display: inline-block;
-                    width: 100%;
-                    padding: 15px 15px 0px 57px;
-                }
-
-                .question-subtitle {                   
-                    label {
-                        padding: 8px 15px 15px 57px;
-                        font-size: 14px;
-                    }
-                }    
-            }
         }
     }
 }

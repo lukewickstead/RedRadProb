@@ -22,16 +22,8 @@ function QuestionOption({
         onChange={handleInputChange}
       />
 
-      <div className={`${question.subTitle.length > 0 ? 'question-title-with-subtitle' : 'question-title'}`}>
+      <div className="question-title">
         <label htmlFor={question.value}>{question.title}</label>
-        { question.subTitle
-        && (
-          <>
-            <div className="question-subtitle">
-              <label htmlFor={question.value}>{question.subTitle}</label>
-            </div>
-          </>
-        )}
       </div>
 
     </li>

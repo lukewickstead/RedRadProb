@@ -106,7 +106,6 @@ class ProbabilityCalculator extends React.Component {
 
     return (
       <div className="central-column-layout-container">
-        <h1>RedRadProb</h1>
         <div className="central-column-layout-container-inner">
           <form>
 

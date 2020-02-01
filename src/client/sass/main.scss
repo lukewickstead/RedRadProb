@@ -2,9 +2,11 @@
 @import './base/global.scss';
 @import './base/variables.scss';
 
-
+// Layouts
 @import './layout/centralColumnLayout.scss';
 
+// Widgets
+@import './components/widgets/header.scss';
 @import './components/widgets/questionNumber.scss';
 @import './components/widgets/questionOption.scss';
 @import './components/widgets/submitButton.scss';

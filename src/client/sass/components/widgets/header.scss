@@ -1,0 +1,81 @@
+@import  '../../base/variables.scss';
+
+.header-container {
+    width: 100%;
+    padding: 0 20px;
+
+    .header-container-inner {
+        background-image: url('../assets/logo.png');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        background-size: 65% auto; 
+        margin: 0 auto;
+        max-width: 1164px;
+        width: 100%;
+
+        h1 {
+          padding-top: 20%;
+          margin-top: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-large-phones) {
+  .header-container {
+    width: 100%;
+
+    .header-container-inner {
+        background-position: 50% 0;
+        background-size: 45% auto; 
+
+        h1 {
+          padding-top: 100px;
+          padding-top: 15%;
+        }
+    }
+}
+}
+
+@media only screen and (min-width: $break-tablets) {
+  .header-container {
+    width: 100%;
+
+    .header-container-inner {
+        background-position: 50% 0;
+        background-size: auto 75%; 
+        margin: 0 auto;
+
+        h1 {
+          padding-top: 125px;
+        }
+    }
+  }
+}
+
+@media only screen and (min-width: $break-medium-desktops) {
+  .header-container {
+    .header-container-inner {
+        background-position: 3% 0;
+        background-size: auto 100%; 
+        margin: 0 auto;
+
+        h1 {
+          padding-top: 10px;
+        }
+    }
+  }
+}
+
+@media only screen and (min-width: $break-large-desktops) {
+  .header-container {
+
+    .header-container-inner {
+        background-position: 5% 0;
+        background-size: auto 100%; 
+
+        h1 {
+          padding-top: 10px;
+        }
+    }
+  }
+}

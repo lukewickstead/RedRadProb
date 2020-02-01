@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+@mixin submit-button
+{
+    background-color: $primary-cta-colour;
+    transition: background-color $primary-transition-time ease-in-out;
+    color: white;
+    border: none;
+    height: 60px; 
+    width: 184px;
+}

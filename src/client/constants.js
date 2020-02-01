@@ -1,0 +1,12 @@
+export const PROBABILITY__INPUT_ONE__ID = 'PROBABILITY__INPUT_ONE';
+export const PROBABILITY__INPUT_ONE__MAX_LENGTH = 6;
+export const PROBABILITY__INPUT_ONE__FIELD_NAME = 'inputOne';
+export const PROBABILITY__INPUT_ONE__LABEL = 'First probability';
+
+export const PROBABILITY__INPUT_TWO__ID = 'PROBABILITY__INPUT_TWO';
+export const PROBABILITY__INPUT_TWO__MAX_LENGTH = PROBABILITY__INPUT_ONE__MAX_LENGTH;
+export const PROBABILITY__INPUT_TWO__FIELD_NAME = 'inputTwo';
+export const PROBABILITY__INPUT_TWO__LABEL = 'Second probability';
+
+export const URL__PROBABILITY_CALCULATOR = '';
+export const URL__PROBABILITY_CALCULATOR__RESULT = 'Result';

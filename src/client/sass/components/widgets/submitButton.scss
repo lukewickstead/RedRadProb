@@ -1,0 +1,13 @@
+@import '../../base/mixins.scss';
+
+.submit-button-wrapper {
+    display: flex;
+    justify-content: end;
+    padding-top: 48px; 
+    padding-bottom: 48px; 
+
+    button.submit
+    {
+        @include submit-button;
+    }
+}

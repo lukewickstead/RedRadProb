@@ -1,10 +1,15 @@
-import { call, takeEvery } from 'redux-saga/effects';
-import { consoleError } from '../helpers/consoleHelper';
+import { put, takeEvery } from 'redux-saga/effects';
+import { push } from 'react-router-redux';
 
-export function* test() {
-  yield call(consoleError, 'Hello World');
+import { PUT__PROBABILITY_CALCULATOR__NEXT, putProbabilityCalculatorResult } from '../actions/probabilityActions';
+import { URL__PROBABILITY_CALCULATOR__RESULT } from '../constants';
+
+export function* probabilityCalculatorNextSaga({ data }) {
+  const { probabilityType, probabilityOne, probabilityTwo } = data;
+  yield put(putProbabilityCalculatorResult(probabilityType, probabilityOne, probabilityTwo, 0.5));
+  yield put(push(URL__PROBABILITY_CALCULATOR__RESULT));
 }
 
-export default function* portfolioDetailsSaga() {
-  yield takeEvery('TEST', test);
+export default function* probabilitySaga() {
+  yield takeEvery(PUT__PROBABILITY_CALCULATOR__NEXT, probabilityCalculatorNextSaga);
 }

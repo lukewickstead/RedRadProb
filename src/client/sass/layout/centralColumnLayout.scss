@@ -1,0 +1,11 @@
+@import '../base/variables.scss';
+
+.central-column-layout-container {
+    margin: 0 auto;
+    max-width: 770px;
+    width: 100%;
+
+    .central-column-layout-container-inner {
+        padding: 0 50px;
+    }
+}

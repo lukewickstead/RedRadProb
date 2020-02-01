@@ -1,11 +1,15 @@
+import { PUT__PROBABILITY_CALCULATOR__RESULT } from '../actions/probabilityActions';
 
 export const initialState = {
-  test: 0,
+  probabilityType: '',
+  probabilityOne: '',
+  probabilityTwo: '',
+  probabilityResult: '',
 };
 
-export default function portfolioDetailsReducer(state = initialState, action) {
+export default function probabilityReducer(state = initialState, action) {
   switch (action.type) {
-    case 'TEST':
+    case PUT__PROBABILITY_CALCULATOR__RESULT:
       return {
         ...state,
         ...action.data,

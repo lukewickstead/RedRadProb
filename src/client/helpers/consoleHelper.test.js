@@ -17,7 +17,7 @@ describe('ConsoleHelpers', () => {
     global.console = realConsole;
   });
 
-  describe('consoleLog', () => {
+  describe('when calling consoleLog', () => {
     it('should call console.log with the expected parameter', () => {
       consoleLog('TestLog');
       expect(console.log).toHaveBeenCalledTimes(1);
@@ -25,7 +25,7 @@ describe('ConsoleHelpers', () => {
     });
   });
 
-  describe('consoleError', () => {
+  describe('when calling consoleError', () => {
     it('should call console.log with the expected parameter', () => {
       consoleError('TestError');
       expect(console.error).toHaveBeenCalledTimes(1);

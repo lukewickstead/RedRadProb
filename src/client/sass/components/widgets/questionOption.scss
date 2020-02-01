@@ -1,0 +1,72 @@
+@import './radioItems.scss';
+@import '../../base/variables.scss';
+
+.question-option-container {
+    ul {
+        list-style: none;
+        margin: 0px;
+        overflow: auto;
+        padding: 0px;
+
+        li {
+            position: relative;
+            background-color: white;
+            border: solid 2px $border-colour;  
+            transition: border $primary-transition-time ease-in-out;
+            border-radius: 8px;  
+            margin-top: 16px;
+
+            &.selected {
+                border: solid 2px $valid-background-color;  
+                transition: border $primary-transition-time ease-in-out;
+
+                .radio-item {
+                    @include radio-item-selected
+                }
+            }
+
+            .radio-item {
+                @include radio-item
+            }
+
+            input[type=radio]
+            {
+                display: none;
+            }
+
+            .question-title
+            {
+                width: 100%;
+                position: relative;
+                line-height: 1.44;
+                label {
+                    cursor: pointer;
+                    display: inline-block;
+                    width: 100%;
+                    padding: 15px 15px 15px 57px;
+                }
+            }
+
+            .question-title-with-subtitle
+            {
+                width: 100%;
+                position: relative;
+                line-height: 1.44;
+
+                label {
+                    cursor: pointer;
+                    display: inline-block;
+                    width: 100%;
+                    padding: 15px 15px 0px 57px;
+                }
+
+                .question-subtitle {                   
+                    label {
+                        padding: 8px 15px 15px 57px;
+                        font-size: 14px;
+                    }
+                }    
+            }
+        }
+    }
+}

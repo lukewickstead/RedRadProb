@@ -24,7 +24,9 @@
     ]
   },
   "nodemonConfig": {
-    "watch": ["index.server.js", ],
+    "watch": [
+      "index.server.js"
+    ],
     "delay": "2500"
   },
   "repository": {
@@ -75,7 +77,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.6.1",

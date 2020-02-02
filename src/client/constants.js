@@ -12,9 +12,9 @@ export const URL__PROBABILITY_CALCULATOR = '/';
 export const URL__PROBABILITY_CALCULATOR__RESULT = '/Result';
 
 export const PROBABILITY_TYPE__EITHER = 'EITHER';
-export const PROBABILITY_TYPE__OR = 'OR';
+export const PROBABILITY_TYPE__AND = 'AND';
 export const PROBABILITY_TYPE__EITHER__TITLE = 'Either';
-export const PROBABILITY_TYPE__OR__TITLE = 'Or';
+export const PROBABILITY_TYPE__AND__TITLE = 'AND';
 
 export const PROBABILITY_PIE_CHART_CONFIG = {
   slices: [{ color: 'green' }, { color: 'red' }],

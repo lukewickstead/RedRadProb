@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__OR } from '../constants';
+import { PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__AND } from '../constants';
 
 export const STORE_PROP_TYPE = PropTypes.shape({
   dispatch: PropTypes.func.isRequired,
@@ -13,8 +13,8 @@ export const NUMBER_OR_STRING_PROP_TYPE = PropTypes.oneOfType(
   [PropTypes.string.isRequired, PropTypes.number.isRequired],
 );
 
-export const PROBABILITY_TYPES_PROP_TYPE = PropTypes.oneOf([PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__OR]);
-export const PROBABILITY_TYPES_PROP_TYPE__OPTIONAL = PropTypes.oneOf([PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__OR, '']);
+export const PROBABILITY_TYPES_PROP_TYPE = PropTypes.oneOf([PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__AND]);
+export const PROBABILITY_TYPES_PROP_TYPE__OPTIONAL = PropTypes.oneOf([PROBABILITY_TYPE__EITHER, PROBABILITY_TYPE__AND, '']);
 
 export const LOCATION_PROP_TYPE = PropTypes.shape({
   pathname: PropTypes.string.isRequired,

@@ -6,8 +6,8 @@ import QuestionOption from '../Widgets/QuestionOption';
 import {
   PROBABILITY_TYPE__EITHER,
   PROBABILITY_TYPE__EITHER__TITLE,
-  PROBABILITY_TYPE__OR,
-  PROBABILITY_TYPE__OR__TITLE,
+  PROBABILITY_TYPE__AND,
+  PROBABILITY_TYPE__AND__TITLE,
 } from '../../constants';
 
 function ProbabilityTypeOptions(
@@ -26,8 +26,8 @@ function ProbabilityTypeOptions(
         value: PROBABILITY_TYPE__EITHER,
       },
       {
-        title: PROBABILITY_TYPE__OR__TITLE,
-        value: PROBABILITY_TYPE__OR,
+        title: PROBABILITY_TYPE__AND__TITLE,
+        value: PROBABILITY_TYPE__AND,
       },
     ],
   };

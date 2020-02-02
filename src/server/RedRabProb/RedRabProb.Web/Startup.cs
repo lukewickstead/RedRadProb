@@ -31,6 +31,15 @@ namespace RedRabProb.Web
             services.AddControllers().AddJsonOptions(opt => {
                 opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowCors",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +49,8 @@ namespace RedRabProb.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowCors");
 
             app.UseHttpsRedirection();
 

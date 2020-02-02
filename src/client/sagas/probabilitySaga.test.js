@@ -1,17 +1,18 @@
 import { expect } from 'chai';
 import { push } from 'react-router-redux';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, call } from 'redux-saga/effects';
+
+import { postProbabilityCalculation } from '../infrastructure/api';
+import { URL__PROBABILITY_CALCULATOR__RESULT, URL__PROBABILITY_CALCULATOR } from '../constants';
+import probabilitySaga, { probabilityCalculatorNextSaga, probabilityCalculatorBackSaga } from './probabilitySaga';
 
 import {
   PUT__PROBABILITY_CALCULATOR__NEXT,
+  PUT__PROBABILITY_CALCULATOR__RESULT__BACK,
   probabilityCalculatorNextAction,
   probabilityCalculatorResultBackAction,
   putProbabilityCalculatorResult,
-  PUT__PROBABILITY_CALCULATOR__RESULT__BACK,
 } from '../actions/probabilityActions';
-
-import { URL__PROBABILITY_CALCULATOR__RESULT, URL__PROBABILITY_CALCULATOR } from '../constants';
-import probabilitySaga, { probabilityCalculatorNextSaga, probabilityCalculatorBackSaga } from './probabilitySaga';
 
 describe('When the user is on the probability calculator page', () => {
   describe('and they have input valid probabilities', () => {
@@ -20,7 +21,8 @@ describe('When the user is on the probability calculator page', () => {
         const action = probabilityCalculatorNextAction('Either', 0, 1);
         const saga = probabilityCalculatorNextSaga(action);
 
-        expect(saga.next().value).to.be.deep.equal(put(putProbabilityCalculatorResult('Either', 0, 1, 0.5)));
+        expect(saga.next().value).to.deep.equal(call(postProbabilityCalculation, 'Either', [0, 1]));
+        expect(saga.next({ data: { rate: 0.5 } }).value).to.be.deep.equal(put(putProbabilityCalculatorResult('Either', 0, 1, 0.5)));
         expect(saga.next().value).to.deep.equal(put(push(URL__PROBABILITY_CALCULATOR__RESULT)));
       });
     });

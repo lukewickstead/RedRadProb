@@ -5,7 +5,7 @@ import { Chart } from 'react-google-charts';
 
 import SubmitButton from '../Widgets/SubmitButton';
 import { NUMBER_OR_STRING_PROP_TYPE, PROBABILITY_TYPES_PROP_TYPE } from '../../helpers/propTypeHelper';
-import { PROBABILITY_PIE_CHART_CONFIG, PROBABILITY_TYPE__AND } from '../../constants';
+import { PROBABILITY_PIE_CHART_CONFIG } from '../../constants';
 import { probabilityCalculatorResultBackAction, PUT__PROBABILITY_CALCULATOR__RESULT__BACK } from '../../actions/probabilityActions';
 
 function ProbabilityVisualiser({
@@ -15,7 +15,8 @@ function ProbabilityVisualiser({
   probabilityResult,
   probabilityType,
 }) {
-  const userMsg = `The ${probabilityType.toLowerCase()} probability using values ${probabilityOne} and ${probabilityTwo} is ${probabilityResult}.`;
+  const formattedResult = parseFloat(probabilityResult).toFixed(4);
+  const userMsg = `The ${probabilityType.toLowerCase()} probability using values ${probabilityOne} and ${probabilityTwo} is ${formattedResult}.`;
 
   return (
     <div className="central-column-layout-container">

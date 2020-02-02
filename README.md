@@ -4,6 +4,8 @@
 
 A simple probability calculator.
 
+**Please run the sln through VS and not through dotnet run which does not seem to set up CORS correctly**
+
 ### Client 
 
 The site is built using Node 12, Express.js and React and Redux, Redux Sags as React Google Charts. The client is run as a separate web server and distributed by a Node.js and Express.js web server.
@@ -42,18 +44,19 @@ npm install
 npm start
 ```
 
+Navigate to the following url top use the application:
+
+- localhost:3001
+
 ### Web Server
 
 The web server is built in C# and .net core 3. A log is produced of all calculations requests and responses. Currently this is set to:  c:\\ReadRad.log. You can change this in the appsettings.json contained in the root of the web directory by changing the variable RedRadLogFile.
 
+To run the server open the web solution in VS and select debug.
 
+Navigate to the following url to ensure the server is up:
 
-To run the server:
-
-```bash
-cd src\server\RedRabProb\RedRabProb.Web>
-dotnet run
-```
+- https://localhost:44326/api/home
 
 
 

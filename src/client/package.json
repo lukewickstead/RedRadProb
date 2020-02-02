@@ -23,12 +23,16 @@
       "<rootDir>/setupTests.js"
     ]
   },
+  "nodemonConfig": {
+    "watch": ["index.server.js", ],
+    "delay": "2500"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukewickstead/RedRadProb.git"
   },
   "author": "Luke Wickstead",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lukewickstead/RedRadProb/issues"
   },

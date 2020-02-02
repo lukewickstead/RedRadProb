@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "5802aecb-c274-4719-8971-e08708e4a12a",
+		"name": "RedRadProb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Probability Calculation Result",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"And\",\n\t\"probabilities\": [\n\t\t{ \"rate\": 0.25},\n\t\t{ \"rate\": 0.25}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44326/api/ProbabilityCalculation",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44326",
+					"path": [
+						"api",
+						"ProbabilityCalculation"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

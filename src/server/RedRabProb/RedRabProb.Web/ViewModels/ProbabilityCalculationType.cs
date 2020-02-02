@@ -5,6 +5,5 @@
         Unknown,
         And,
         Either,
-        Or,
     }
 }

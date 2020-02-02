@@ -23,7 +23,7 @@
             try
             {
                 var result = await this.probabilityCalculationService.CalculateProbabilityAsync(request);
-                return new ProbabilityViewModel { Rate = result };
+                return this.Ok(new ProbabilityViewModel { Rate = result });
             }
             catch
             {

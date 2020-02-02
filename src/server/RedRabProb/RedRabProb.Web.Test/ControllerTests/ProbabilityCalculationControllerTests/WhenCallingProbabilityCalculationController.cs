@@ -21,7 +21,7 @@
         [Theory]
         [ClassData(typeof(ProbabilityCalculationAndTestDataProvider))]
         [ClassData(typeof(ProbabilityCalculationEitherTestDataProvider))]
-        public async Task WithAndRequestsShouldReturnTheCorrectResult(
+        public async Task AndTheRequestsIsValidShouldReturnTheCorrectResult(
             ProbabilityCalculationRequestViewModel stubbedRequest,
             ProbabilityViewModel expectedResult)
         {
@@ -34,8 +34,11 @@
             var result = await sut.Post(stubbedRequest);
 
             // Assert
-            result.Should().BeAssignableTo<ActionResult<ProbabilityViewModel>>();
-            result.Value.Should().BeEquivalentTo(expectedResult);
+            var actionResult = Assert.IsAssignableFrom<ActionResult<ProbabilityViewModel>>(result);
+            var viewResult = Assert.IsAssignableFrom<OkObjectResult>(actionResult.Result);
+            var viewModel = Assert.IsAssignableFrom<ProbabilityViewModel>(viewResult.Value);
+
+            viewModel.Should().BeEquivalentTo(expectedResult);
             this.builder.VerifyLogWasCalledCorrectly(stubbedRequest, expectedResult);
         }
     }

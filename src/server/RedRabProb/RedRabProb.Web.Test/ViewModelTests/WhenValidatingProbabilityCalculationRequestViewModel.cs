@@ -100,7 +100,7 @@
             // Assign
             var model = new ProbabilityCalculationRequestViewModel
             {
-                Type = ProbabilityCalculationType.Or,
+                Type = ProbabilityCalculationType.And,
                 Probabilities = new List<ProbabilityViewModel>
                 {
                     new ProbabilityViewModel { Rate = 1 },

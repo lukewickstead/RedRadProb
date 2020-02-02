@@ -1,14 +1,13 @@
-using System.Text.Json.Serialization;
-using RedRabProb.Logging;
-using RedRabProb.Web.Domain;
-
 namespace RedRabProb.Web
 {
+    using System.Text.Json.Serialization;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using RedRabProb.Logging;
+    using RedRabProb.Web.Domain;
 
     public class Startup
     {
@@ -28,13 +27,15 @@ namespace RedRabProb.Web
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient<IProbabilityCalculationService, ProbabilityCalculationService>();
 
-            services.AddControllers().AddJsonOptions(opt => {
+            services.AddControllers().AddJsonOptions(opt =>
+            {
                 opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowCors",
+                options.AddPolicy(
+                    "AllowCors",
                     builder =>
                     {
                         builder.AllowAnyOrigin().AllowAnyHeader();

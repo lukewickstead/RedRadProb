@@ -13,8 +13,6 @@
                     return new ProbabilityCalculationAnd();
                 case ProbabilityCalculationType.Either:
                     return new ProbabilityCalculationEither();
-                case ProbabilityCalculationType.Or:
-                    return new ProbabilityCalculationOr();
                 default:
                     throw new ArgumentException($"Unsupported probability calculation type: ${type}");
             }
